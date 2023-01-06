@@ -48,7 +48,7 @@ ___
 ___
 ## API
 API **BackForTest** имеет следующие endpoints:
-- /api/v1/api-token-auth/ - получение токена
+- /api/v1/api-token-auth/ - авторизация, получение токена
 - /api/v1/nomenclatures/ - номенклатура
 - /api/v1/nomenclatures/<nomenclature_id>/ - работа с номенклатурой по ID
 - /api/v1/workorders/ - заказы-наряды
@@ -58,7 +58,7 @@ API **BackForTest** имеет следующие endpoints:
 
 Browsable API даст вам больше информации. Для этого зайдите на endpoint url через браузер. Для получения доступа нужно 
 авторизоваться в админке - /admin/. Все endpoints, кроме /api/v1/api-token-auth/ доступны только авторизованным 
-пользователям. В header "Authorization" ваших запросов должен быть токен с префиксом "Token " (Authorization: 
+пользователям. В header "Authorization" ваших запросов должен быть токен с префиксом "Token ", полученный при авторизации (например Authorization: 
 Token 9944b09199c62bcf9418ad846dd0e4bbdfc6ee4b).
 
 ___
@@ -123,6 +123,6 @@ pip install -r requirements.txt
 
 * Запустить проект:
 ```
-python3 manage.py runserver
+python manage.py runserver
 ```
 
