@@ -60,6 +60,7 @@ class ProductViewSet(viewsets.ModelViewSet):
 class NomenclatureViewSet(viewsets.ModelViewSet):
     queryset = Nomenclature.objects.all()
     serializer_class = NomenclatureSerializer
+    pagination_class = None
     ordering = ('code',)
 
     filter_backends = (DjangoFilterBackend,
