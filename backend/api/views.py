@@ -2,7 +2,7 @@ from random import randint
 
 from django.shortcuts import get_object_or_404
 from django_filters.rest_framework import DjangoFilterBackend
-from rest_framework import viewsets, permissions
+from rest_framework import viewsets
 from rest_framework.exceptions import PermissionDenied
 from rest_framework import filters
 

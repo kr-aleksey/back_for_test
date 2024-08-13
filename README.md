@@ -64,12 +64,10 @@ API **BackForTest** имеет следующие endpoints:
 - /api/v1/workorders/<work_order_id>/products/ - продукция, произведенная по наряду-заказу
 - /api/v1/workorders/<work_order_id>/products/<product_id> - работа с произведенными объектами продукции
 
-**Browsable API даст вам больше информации.** Для этого зайдите на endpoint url через браузер. Для получения доступа
-нужно
-авторизоваться в админке - /admin/. Все endpoints, кроме /api/v1/api-token-auth/ доступны только авторизованным
-пользователям. В header "Authorization" ваших запросов должен быть токен с префиксом "Token ", полученный при
-авторизации (например Authorization:
-Token 9944b09199c62bcf9418ad846dd0e4bbdfc6ee4b).
+**Документация по API** доступна по адресу - /api/v1/docs/ 
+
+API требует авторизации. В headers передавайте токен полученный через /api/v1/api-token-auth/ с ключом "Authorization".
+Например: "Authorization: Token 9944b09199c62bcf9418ad846dd0e4bbdfc6eabc".
 
 ___
 
@@ -127,36 +125,18 @@ Frontend должен работать в браузере Google Chrome на PC
 
 ## Запуск BackForTest на PC
 
-* Установите Python 3.10
+* Установите [Docker Compose](https://docs.docker.com/compose/install/)
 
-```
-https://www.python.org/downloads/
-```
-
-* Клонируйте репозиторий и перейдите в созданную паку в командной строке:
+* Клонируйте репозиторий и перейдите в папку infra_back_for_test в командной строке:
 
 ```
 git clone https://github.com/kr-aleksey/back_for_test
-cd back_for_test
-```
-
-* Создайте и активируйте виртуальное окружение:
-
-```
-python -m venv venv
-venv\scripts\activate
-```
-
-* Установите зависимости из файла requirements.txt:
-
-```
-python -m pip install --upgrade pip
-pip install -r requirements.txt
+cd back_for_test/infra_back_for_test
 ```
 
 * Запустить проект:
 
 ```
-python manage.py runserver
+docker compose up
 ```
 
